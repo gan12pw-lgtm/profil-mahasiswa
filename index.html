@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Mahasiswa</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="identitas">
+            
+<div class="foto">
+    <img src="images/Gandhy.jpg" alt="Foto profil mahasiswa">
+</div>
+
+            <h1>Profil Gandhy Prakoso Wibowo</h1>
+        </div>
+    </header>
+
+     
+<nav aria-label="Navigasi profil">
+    <a href="#" data-menu="Biodata" class="aktif">Biodata</a>
+    <a href="#" data-menu="Pendidikan">Pendidikan</a>
+    <a href="#" data-menu="Pengalaman">Pengalaman</a>
+    <a href="#" data-menu="Keahlian">Keahlian</a>
+    <a href="#" data-menu="Publikasi">Publikasi</a>
+</nav>
+
+
+    <main>
+        <section id="konten">
+            <h2>Biodata</h2>
+            <p><strong>Nama:</strong> Gandhy Prakoso Wibowo</p>
+            <p><strong>NIM:</strong> 2025081055</p>
+            <p><strong>Program Studi:</strong> Sistem Informasi</p>
+            <p><strong>Tempat, Tanggal Lahir:</strong> Jakarta, 12 Maret 2005</p>
+            <p><strong>Agama:</strong> Islam</p>
+        </section>
+    </main>
+
+    <aside>
+        <h2>Hobi dan Minat</h2>
+        <ul>
+            <li>Gaming</li>
+            <li>Programming</li>
+            <li>Mendengarkan musik</li>
+        </ul>
+        <h2>Keahlian</h2>
+        <p>HTML, CSS, dan desain web</p>
+    </aside>
+
+    
+<footer>
+    <div class="social-media">
+        <div>Instagram: @arkosoo</div>
+        <div>Tiktok: @G12P</div>
+    </div>
+
+    <div>© 2026 Profil Mahasiswa</div>
+
+    <div>Profile Gandhy Website</div>
+</footer>
+
+
+<script>
+    const konten = document.getElementById("konten");
+    const menu = document.querySelectorAll("nav a");
+
+    const dataProfil = {
+        Biodata: `
+            <h2>Biodata</h2>
+            <p><strong>Nama:</strong> Gandhy Prakoso Wibowo</p>
+            <p><strong>NIM:</strong> 2025081055</p>
+            <p><strong>Program Studi:</strong> Sistem Informasi</p>
+            <p><strong>Tempat, Tanggal Lahir:</strong> Jakarta, 12 Maret 2005</p>
+            <p><strong>Agama:</strong> Islam</p>
+        `,
+
+        Pendidikan: `
+            <h2>Pendidikan</h2>
+            <ul>
+                <li>SD: SDN 03 Tanggerang</li>
+                <li>SMP: SMP Yadika 5</li>
+                <li>SMA: SMAN 29 Jakarta</li>
+                <li>Perguruan Tinggi: Universitas Pembangunan Jaya</li>
+            </ul>
+        `,
+
+        Pengalaman: `
+            <h2>Pengalaman</h2>
+            <ul>
+                <li>Happy Waves Event - Divisi Sarpras</li>
+                <li>Waste To Wonder - Ketua</li>
+            </ul>
+        `,
+
+        Keahlian: `
+            <h2>Keahlian</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Desain web</li>
+                <li>Kerja sama tim</li>
+            </ul>
+        `,
+
+        Publikasi: `
+            <h2>Publikasi</h2>
+            <ul>
+                <li>Proyek Website Profil Mahasiswa
+                    Mengembangkan website profil mahasiswa menggunakan HTML dan CSS dengan menerapkan semantic HTML, 
+                    desain responsif, serta navigasi interaktif untuk menampilkan informasi pribadi dan pengalaman organisasi.</li>
+            </ul>
+        `
+    };
+
+    menu.forEach(function(link) {
+        link.addEventListener("click", function(event) {
+            event.preventDefault();
+
+            const pilihan = this.dataset.menu;
+            konten.innerHTML = dataProfil[pilihan];
+
+            menu.forEach(function(item) {
+                item.classList.remove("aktif");
+            });
+
+            this.classList.add("aktif");
+        });
+    });
+</script>
+</body>
+</body>
+</html>
